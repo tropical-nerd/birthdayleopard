@@ -36,6 +36,8 @@ const writeStyle = () => sass.render({
             if(!error) {
                 console.log('Wrote ' + sassOutFile);
                 browserSync.reload('style.css')
+            } else {
+                console.log(error)
             }
         })
     } 

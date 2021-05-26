@@ -13,11 +13,13 @@ body {
   height: 100vh; }
 
 .ground {
+  position: relative;
   width: 100%;
   height: 100vh;
   background: #9000ff;
   background: linear-gradient(0deg, #9000ff 0%, #00d0ff 100%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center; }
 
@@ -76,6 +78,10 @@ body {
     top: 0; }
   .leopard-rise {
     animation: leopard-rise 1s forwards; }
+  .leopard-wiggle {
+    animation: leopard-wiggle .25s alternate .2s infinite linear backwards; }
+    .leopard-wiggle .leopard-head {
+      animation: leopard-wiggle .25s alternate infinite linear; }
 
 @keyframes bush-shake {
   from {
@@ -88,3 +94,64 @@ body {
     transform: translateY(100%); }
   to {
     transform: translateY(0%); } }
+
+@keyframes leopard-wiggle {
+  from {
+    transform: rotate(-1deg); }
+  to {
+    transform: rotate(1deg); } }
+
+.script-text {
+  fill: none;
+  stroke: #f0f;
+  stroke-width: 8;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  margin: 5vmin 0; }
+
+.birthday-text {
+  width: 75vw; }
+
+.name-text {
+  width: 40vw; }
+
+.draw-text .text-path-1 {
+  animation: 0.2s linear 1 reverse forwards 0s draw-text; }
+
+.draw-text .text-path-2 {
+  animation: 0.4s linear 1 reverse forwards 0.35s draw-text; }
+
+.draw-text .text-path-3 {
+  animation: 0.1s linear 1 reverse forwards 0.9s draw-text; }
+
+.draw-text .text-path-4 {
+  animation: 1.8s linear 1 reverse forwards 1.15s draw-text; }
+
+.draw-text .text-path-5 {
+  animation: 0.4s linear 1 reverse forwards 3.1s draw-text; }
+
+.draw-text .text-path-6 {
+  animation: 2s linear 1 reverse forwards 3.65s draw-text; }
+
+.draw-text .text-path-7 {
+  animation: 0.05s linear 1 reverse forwards 5.8s draw-text; }
+
+.draw-text .text-path-8 {
+  animation: 0.1s linear 1 reverse forwards 6s draw-text; }
+
+.draw-text .text-path-9 {
+  animation: 0.2s linear 1 reverse forwards 6.25s draw-text; }
+
+.draw-text .text-path-10 {
+  animation: 0.8s linear 1 reverse forwards 6.6s draw-text; }
+
+.draw-text .text-path-11 {
+  animation: 0.05s linear 1 reverse forwards 7.55s draw-text; }
+
+@keyframes draw-text {
+  0% {
+    stroke-dashoffset: 0; }
+  100% {
+    stroke-dashoffset: 1; } }

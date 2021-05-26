@@ -13,11 +13,13 @@ body
     height: 100vh
 
 .ground
-    width: 100%;
+    position: relative
+    width: 100%
     height: 100vh
     background: rgb(144,0,255)
     background: linear-gradient(0deg, rgba(144,0,255,1) 0%, rgba(0,208,255,1) 100%);
     display: flex
+    flex-direction: column
     align-items: center
     justify-content: center
 
@@ -83,7 +85,11 @@ body
     &-rise
         animation: leopard-rise 1s forwards
 
+    &-wiggle
+        animation: leopard-wiggle .25s alternate .2s infinite linear backwards
 
+        .leopard-head
+            animation: leopard-wiggle .25s alternate infinite linear
 
 @keyframes bush-shake
     from
@@ -96,3 +102,43 @@ body
         transform: translateY(100%)
     to
         transform: translateY(0%)
+
+@keyframes leopard-wiggle
+    from
+        transform: rotate(-1deg)
+    to
+        transform: rotate(1deg)
+
+.script-text
+    fill: none
+    stroke: #f0f
+    stroke-width: 8
+    stroke-linejoin: round
+    stroke-linecap: round
+    stroke-dasharray: 1 1
+    stroke-dashoffset: 1
+    margin: 5vmin 0
+
+.birthday-text
+    width: 75vw
+
+.name-text
+    width: 40vw
+
+$text-count: 11
+$text-durations: .2s .4s .1s 1.8s .4s 2s .05s .1s .2s .8s .05s
+$text-delay: 0s
+
+@for $text-index from 1 through $text-count
+    $text-duration: nth($text-durations, $text-index)
+
+    .draw-text .text-path-#{$text-index}
+        animation: $text-duration linear 1 reverse forwards $text-delay draw-text
+    
+    $text-delay: $text-delay + $text-duration + .15s
+ 
+@keyframes draw-text 
+    0%
+        stroke-dashoffset: 0
+    100%
+        stroke-dashoffset: 1
