@@ -1,0 +1,66 @@
+html
+    box-sizing: border-box
+
+*
+    box-sizing: inherit
+
+svg
+    overflow: visible
+
+body
+    font-family: sans-serif
+    margin: 0
+    height: 100vh
+
+.ground
+    width: 100%;
+    height: 100vh
+    background: rgb(144,0,255)
+    background: linear-gradient(0deg, rgba(144,0,255,1) 0%, rgba(0,208,255,1) 100%);
+    display: flex
+    align-items: center
+    justify-content: center
+
+.art
+    position: relative
+    width: 70vmin
+    height: 70vmin
+
+.bush-left-svg
+    position: absolute
+    width: 65%
+    left: 0
+    bottom: 0
+
+.bush-right-svg
+    position: absolute
+    width: 75%
+    right: 0
+    bottom: 0
+
+.clip-leopard
+    position: absolute
+    width: 45%
+    aspect-ratio: .55
+    left: 30%
+    bottom: 1px
+    overflow: hidden
+
+.leopard
+    position: absolute
+    width: 100%
+    aspect-ratio: .55
+    bottom: -10%
+    // transform: translateY(100%)
+
+    &-body-svg
+        position: absolute
+        left: 0
+        bottom: 0
+
+    &-head-svg
+        position: absolute
+        left: 16%
+        width: 75%
+
+
