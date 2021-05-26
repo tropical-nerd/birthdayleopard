@@ -38,29 +38,61 @@ body
     right: 0
     bottom: 0
 
+.bush-shake
+    animation: .1s linear alternate infinite bush-shake
+
+    &.bush-right-svg
+        animation-delay: .1s
+    
 .clip-leopard
     position: absolute
     width: 45%
-    aspect-ratio: .55
     left: 30%
     bottom: 1px
     overflow: hidden
+    
+    &::before
+        content: " "
+        display: block
+        width: 100%
+        padding-bottom: 181%
 
 .leopard
     position: absolute
     width: 100%
-    aspect-ratio: .55
     bottom: -10%
-    // transform: translateY(100%)
+    transform: translateY(100%)
+
+    &::before
+        content: " "
+        display: block
+        width: 100%
+        padding-bottom: 181%
 
     &-body-svg
         position: absolute
         left: 0
         bottom: 0
 
-    &-head-svg
+    &-head
         position: absolute
         left: 16%
         width: 75%
+        top: 0
+
+    &-rise
+        animation: leopard-rise 1s forwards
 
 
+
+@keyframes bush-shake
+    from
+        transform: translateX(-3%)
+    to
+        transform: translateX(+3%)
+
+@keyframes leopard-rise
+    from
+        transform: translateY(100%)
+    to
+        transform: translateY(0%)

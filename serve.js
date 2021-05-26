@@ -47,3 +47,4 @@ browserSync.init({
 
 browserSync.watch('./src/index.pug').on('change', writeIndex);
 browserSync.watch('./src/style.sass').on('change', writeStyle);
+browserSync.watch('./serve/birthday-leopard.js').on('change', () => browserSync.reload('index.html'));
